@@ -1,0 +1,84 @@
+Testimonials\Testimonials\Code\Tables\Testimonials:
+  table: testimonials_testimonials
+  type: entity
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    user_id:
+      name: user_id
+      type: integer
+      length: 11
+      nullable: false
+    title:
+      name: title
+      type: string
+      length: 255
+      nullable: false
+    testimony:
+      name: testimony
+      type: text
+      nullable: true
+    image:
+      name: image
+      type: integer
+      length: 11
+      nullable: true
+    user_title:
+      name: user_title
+      type: string
+      length: 255
+      nullable: true
+    name:
+      name: name
+      type: string
+      length: 255
+      nullable: true
+    company:
+      name: company
+      type: string
+      length: 255
+      nullable: true
+    published:
+      name: published
+      type: integer
+      length: 11
+      nullable: true
+    featured:
+      name: featured
+      type: integer
+      length: 11
+      nullable: true
+    created_by:
+      name: created_by
+      type: integer
+      length: 11
+      nullable: false
+    date_created:
+      name: date_created
+      type: datetime
+      nullable: false
+    modified_by:
+      name: modified_by
+      type: integer
+      length: 11
+      nullable: false
+    date_modified:
+      name: date_modified
+      type: datetime
+      nullable: false
+  indexes:
+    user_id_index:
+      columns: [user_id]
+    created_by_index:
+      columns: [created_by]
+    modified_by_index:
+      columns: [modified_by]
+  lifecycleCallbacks:
+    prePersist:
+      - onPrePersist
+      - onPrePersistCallbacks
+    preUpdate:
+      - onPreUpdate
+      - onPreUpdateCallbacks

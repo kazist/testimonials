@@ -1,0 +1,14 @@
+{
+    "title": "Testimonials",
+    "description": "Testimonials Advertisement",
+    "alias": "testimonials",
+    "icon": "fa-picture-o",
+    "home_link": "testimonials\/testimonials",
+    "is_core": "1",
+    "menulist": [{
+            "title": "Testimonials",
+            "alias": "admin_testimonials_testimonials",
+            "url": "admin/testimonials/testimonials",
+            "children": []
+        }]
+}

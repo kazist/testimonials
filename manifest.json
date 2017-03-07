@@ -1,0 +1,9 @@
+{
+    "name": "testimonials",
+    "title": "Testimonials",
+    "icon": "icons\/testimonials.png",
+    "extension": "component",
+    "path": "testimonials\/",
+    "description": "Testimonials",
+    "version": 1
+}

@@ -1,0 +1,10 @@
+{
+    "title": "Testimonials",
+    "alias": "testimonials",
+    "table_name": "testimonials_testimonials",
+    "title_field": "title",
+    "content_field": "testimony",
+    "image_field": "image",
+    "published": "1",
+    "is_processed": "0"
+}

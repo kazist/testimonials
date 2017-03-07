@@ -1,0 +1,74 @@
+{# empty Twig template #}
+
+{% set params = {  'action': action, 'offset': offset , 'limit': '2'} %}
+
+{{ set_assets('applications/Testimonials/assets/js/testimonial.js') }}
+{{ set_assets('applications/Testimonials/assets/css/testimonial.css') }}
+
+{% set items = callFunction( "Testimonials.Testimonials.Code.Models.TestimonialsModel", 'getTestimonials', params ) %}
+{% set total = callFunction( "Testimonials.Testimonials.Code.Models.TestimonialsModel", 'getTotalTestimonials', params ) %}
+
+<div class="testimonial-list">
+    <ul >
+
+        {% if items|length > 0 %}
+            {% for item in items %}
+
+                <li class="clearfix">
+                    <img src="{{ resized_image(item.media.file,90,90) }}" class="avatar" alt="{{ item.title }}" title="{{ item.title }}" width="90px">
+                    <div class="testimonial">
+                        <div class="header bg-light-blue">
+                            {{ item.title }} 
+                        </div>
+                        <div class="body">
+                            <div>
+                                <i class="fa fa-quote-left fa-2x"></i> 
+                                {{ item.testimony|raw }}  
+                                <i class="fa fa-quote-right fa-2x"></i>
+                                <br>
+                            </div>
+                            <div class="meta-bottom">
+                                <i class="fa fa-user"></i> {{ item.user_title|capitalize }}: {{ item.name }} &nbsp;&nbsp;
+                                {% if item.company != '' %}
+                                    <i class="fa fa-briefcase"></i> {{ item.company }} 
+                                {% endif %}
+                            </div>
+                            <div class="meta-bottom">
+                                <i class="fa fa-clock-o"></i> {{ item.date_created|date('d M Y H:i') }} 
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+            {% endfor %}
+        {% endif %}
+
+    </ul>
+</div>
+
+
+<div class="clearfix"></div>
+{% if total > 3 %}
+
+    <div class="testimonials-navigation">
+
+        {% if offset %}
+            <div class="previous-testimonials pull-left">
+                <a class="btn btn-default btn-sm btn-flat" offset="{{ offset|default('0') }}" action="previous">
+                    <i class="fa fa-arrow-left"></i>
+                    Pre
+                </a>
+            </div>
+        {% endif %}
+
+        {% if (offset + 3) < total %}
+            <div class="next-testimonials pull-right">
+                <a class="btn btn-default btn-sm btn-flat" offset="{{ offset|default('0')  }}" action="next">
+                    <i class="fa fa-arrow-right"></i>
+                    Next 
+                </a>
+            </div>
+        {% endif %}
+    </div>
+
+{% endif %}

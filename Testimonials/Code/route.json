@@ -1,0 +1,241 @@
+{
+    "frontend": [{
+            "title": "Testimonial List",
+            "description": "Management of Testimonials.",
+            "controller": "Testimonials\\Testimonials\\Code\\Controllers\\TestimonialsController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "testimonials.testimonials",
+            "route": "testimonials/testimonials",
+            "arguments": "",
+            "keywords": "testimonial, list",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 0,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"],
+                "MODERATOR": ["can_view", "can_viewown"],
+                "USER": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Add Testimonial ",
+            "description": "Add Testimonial .",
+            "controller": "Testimonials\\Testimonials\\Code\\Controllers\\TestimonialsController::addAction",
+            "unique_name": "testimonials.testimonials.add",
+            "route": "testimonials/testimonials/add",
+            "permissions": "can_add",
+            "arguments": {},
+            "keywords": "testimonial,add",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add"],
+                "ADMIN": ["can_add"],
+                "MODERATOR": ["can_add"],
+                "USER": ["can_add"]
+            }
+        }, {
+            "title": "Edit Testimonial {{ item.name }}",
+            "description": "Edit Testimonial {{ item.name }}.",
+            "controller": "Testimonials\\Testimonials\\Code\\Controllers\\TestimonialsController::editAction",
+            "unique_name": "testimonials.testimonials.edit",
+            "route": "testimonials/testimonials/edit/{id}",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "testimonial, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"],
+                "MODERATOR": ["can_add", "can_write", "can_writeown"],
+                "USER": ["can_add", "can_writeown"]
+            }
+        }, {
+            "title": "Testimonial Detail: {{ item.name }}",
+            "description": "Testimonial Detail: {{ item.name }}",
+            "controller": "Testimonials\\Testimonials\\Code\\Controllers\\TestimonialsController::detailAction",
+            "unique_name": "testimonials.testimonials.detail",
+            "route": "testimonials/testimonials/detail/{id}",
+            "permissions": "can_view, can_viewown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "testimonial, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 0,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"],
+                "MODERATOR": ["can_view", "can_viewown"],
+                "USER": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Testimonial Delete: {{ item.name }}",
+            "description": "Testimonial Delete: {{ item.name }}",
+            "controller": "Testimonials\\Testimonials\\Code\\Controllers\\TestimonialsController::deleteAction",
+            "unique_name": "admin.testimonials.testimonials.delete",
+            "route": "admin/testimonials/testimonials/delete/{id}",
+            "permissions": "can_delete, can_deleteown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "testimonial, delete, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_delete", "can_deleteown"],
+                "ADMIN": ["can_delete", "can_deleteown"],
+                "MODERATOR": ["can_delete", "can_deleteown"],
+                "USER": ["can_deleteown"]
+            }
+        }, {
+            "title": "Testimonial Save: {{ item.name }}",
+            "description": "Testimonial Save: {{ item.name }}",
+            "controller": "Testimonials\\Testimonials\\Code\\Controllers\\TestimonialsController::saveAction",
+            "unique_name": "admin.testimonials.testimonials.save",
+            "route": "admin/testimonials/testimonials/save",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "testimonial, save, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"],
+                "MODERATOR": ["can_add", "can_writeown"],
+                "USER": ["can_add", "can_writeown"]
+            }
+        }]
+    ,
+    "backend": [{
+            "title": "General Tasks",
+            "description": "General Tasks.",
+            "controller": "Testimonials\\Testimonials\\Code\\Controllers\\Admin\\TestimonialsController::taskAction",
+            "unique_name": "admin.testimonials.testimonials.task",
+            "route": "admin/testimonials/testimonials/task",
+            "permissions": "can_write",
+            "arguments": "",
+            "keywords": "testimonials, task",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_write"],
+                "ADMIN": ["can_write"]
+            }
+        }, {
+            "title": "Testimonial List",
+            "description": "Management of Testimonials.",
+            "controller": "Testimonials\\Testimonials\\Code\\Controllers\\Admin\\TestimonialsController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "admin.testimonials.testimonials",
+            "route": "admin/testimonials/testimonials",
+            "arguments": "",
+            "keywords": "testimonial, list",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Add Testimonial ",
+            "description": "Add Testimonial .",
+            "controller": "Testimonials\\Testimonials\\Code\\Controllers\\Admin\\TestimonialsController::addAction",
+            "unique_name": "admin.testimonials.testimonials.add",
+            "route": "admin/testimonials/testimonials/add",
+            "permissions": "can_add",
+            "arguments": {},
+            "keywords": "testimonial,add",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add"],
+                "ADMIN": ["can_add"]
+            }
+        }, {
+            "title": "Edit Testimonial {{ item.name }}",
+            "description": "Edit Testimonial {{ item.name }}.",
+            "controller": "Testimonials\\Testimonials\\Code\\Controllers\\Admin\\TestimonialsController::editAction",
+            "unique_name": "admin.testimonials.testimonials.edit",
+            "route": "admin/testimonials/testimonials/edit/{id}",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "testimonial, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }, {
+            "title": "Testimonial Detail: {{ item.name }}",
+            "description": "Testimonial Detail: {{ item.name }}",
+            "controller": "Testimonials\\Testimonials\\Code\\Controllers\\Admin\\TestimonialsController::detailAction",
+            "unique_name": "admin.testimonials.testimonials.detail",
+            "route": "admin/testimonials/testimonials/detail/{id}",
+            "permissions": "can_view, can_viewown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "testimonial, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Testimonial Delete: {{ item.name }}",
+            "description": "Testimonial Delete: {{ item.name }}",
+            "controller": "Testimonials\\Testimonials\\Code\\Controllers\\Admin\\TestimonialsController::deleteAction",
+            "unique_name": "admin.testimonials.testimonials.delete",
+            "route": "admin/testimonials/testimonials/delete/{id}",
+            "permissions": "can_delete, can_deleteown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "testimonial, delete, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_delete", "can_deleteown"],
+                "ADMIN": ["can_delete", "can_deleteown"]
+            }
+        }, {
+            "title": "Testimonial Save: {{ item.name }}",
+            "description": "Testimonial Save: {{ item.name }}",
+            "controller": "Testimonials\\Testimonials\\Code\\Controllers\\Admin\\TestimonialsController::saveAction",
+            "unique_name": "admin.testimonials.testimonials.save",
+            "route": "admin/testimonials/testimonials/save",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "testimonial, save, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }]
+} 	

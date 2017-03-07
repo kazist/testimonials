@@ -1,0 +1,6 @@
+{
+    "TestimonialsTestimonials": {
+        "namespace": "Testimonials\\Testimonials",
+        "controller": "TestimonialsController"
+    }
+}
