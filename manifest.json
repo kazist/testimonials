@@ -1,9 +1,9 @@
 {
-    "name": "testimonials",
+    "name": "kazist/testimonials",
     "title": "Testimonials",
     "icon": "icons\/testimonials.png",
     "extension": "component",
-    "path": "testimonials\/",
+    "path": "applications/Testimonials/",
     "description": "Testimonials",
     "version": 1
 }
