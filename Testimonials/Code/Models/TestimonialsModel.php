@@ -70,13 +70,8 @@ class TestimonialsModel extends BaseModel {
 
         $session = $factory->getSession();
 
-        //$email->debug_exit = true;
-        $uri = $session->get('uri');
-
-        $query = new Query();
-        $query->select('tt.*');
-        $query->from('#__testimonials_testimonials', 'tt');
-
+        $query = $factory->getQueryBuilder('#__testimonials_testimonials',  'tt');
+        
         $query->orderBy('id ', 'DESC');
 
         $query->setFirstResult($offset);
