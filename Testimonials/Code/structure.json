@@ -73,12 +73,13 @@
         },
         "table": {
             "fields": [
-                "user_id",
                 "title",
+                "image",
+                "user_title",
+                "name",
+                "company",
                 "published",
-                "featured",
-                "created_by",
-                "date_created"
+                "featured"
             ],
             "has_label": [
                 "user_id",
@@ -91,20 +92,17 @@
         }
     },
     "rights": {
-        "tab": [
-        ],
+        "tab": [],
         "group": [
             "modification_detail"
         ],
-        "field": [
-        ]
+        "field": []
     },
-    "customhtmls": [
-    ],
+    "customhtmls": [],
     "fields": [
         {
             "dropdown_filter": "0",
-            "nullable": "0",
+            "nullable": "1",
             "name": "id",
             "html_type": "text",
             "mysql_type": "int",
@@ -117,55 +115,17 @@
             "readonly": "",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
-            "dropdown_filter": "1",
-            "nullable": "0",
-            "name": "user_id",
-            "html_type": "autocomplete",
-            "mysql_type": "int",
-            "view_side": "both",
-            "index": "",
-            "id_name": "",
-            "class_name": "",
-            "default_value": "",
-            "size": "",
-            "readonly": "0",
-            "format_value": "",
-            "parameters": {
-                "general": [
-                ],
-                "source": {
-                    "data_source": "db_table",
-                    "join_field": "id",
-                    "display_field": [
-                        "name"
-                    ],
-                    "join_table_name": "users_users"
-                },
-                "save": {
-                    "index": ""
-                },
-                "media": [
-                ],
-                "payment": [
-                ]
-            }
-        },
-        {
-            "dropdown_filter": "1",
+            "dropdown_filter": "0",
             "nullable": "0",
             "name": "title",
             "html_type": "text",
@@ -179,24 +139,20 @@
             "readonly": "",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
             "dropdown_filter": "0",
             "nullable": "1",
             "name": "testimony",
-            "html_type": "textarea",
+            "html_type": "editor",
             "mysql_type": "text",
             "view_side": "both",
             "index": "",
@@ -211,15 +167,12 @@
                     "col": "",
                     "row": ""
                 },
-                "source": [
-                ],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
@@ -241,43 +194,12 @@
                     "file_path": "",
                     "file_group_by": "id"
                 },
-                "source": [
-                ],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
-            }
-        },
-        {
-            "dropdown_filter": "0",
-            "nullable": "1",
-            "name": "user_title",
-            "html_type": "text",
-            "mysql_type": "varchar",
-            "view_side": "both",
-            "index": "",
-            "id_name": "",
-            "class_name": "",
-            "default_value": "",
-            "size": "",
-            "readonly": "0",
-            "format_value": "",
-            "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
-                "save": {
-                    "index": ""
-                },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
@@ -295,17 +217,13 @@
             "readonly": "0",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
@@ -323,21 +241,72 @@
             "readonly": "0",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "0",
+            "nullable": "1",
+            "name": "user_title",
+            "html_type": "text",
+            "mysql_type": "varchar",
+            "view_side": "both",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "0",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": [],
+                "save": {
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
             }
         },
         {
             "dropdown_filter": "1",
+            "nullable": "1",
+            "name": "user_id",
+            "html_type": "autocomplete",
+            "mysql_type": "int",
+            "view_side": "both",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "0",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": {
+                    "data_source": "db_table",
+                    "join_field": "id",
+                    "display_field": [
+                        "name"
+                    ],
+                    "join_table_name": "users_users"
+                },
+                "save": {
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "0",
             "nullable": "1",
             "name": "published",
             "html_type": "yesno",
@@ -351,21 +320,17 @@
             "readonly": "0",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
-            "dropdown_filter": "1",
+            "dropdown_filter": "0",
             "nullable": "1",
             "name": "featured",
             "html_type": "yesno",
@@ -379,22 +344,18 @@
             "readonly": "0",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
-            "dropdown_filter": "1",
-            "nullable": "0",
+            "dropdown_filter": "0",
+            "nullable": "1",
             "name": "created_by",
             "html_type": "autocomplete",
             "mysql_type": "int",
@@ -407,8 +368,7 @@
             "readonly": "0",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
+                "general": [],
                 "source": {
                     "data_source": "db_table",
                     "join_field": "id",
@@ -420,15 +380,13 @@
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
-            "dropdown_filter": "1",
-            "nullable": "0",
+            "dropdown_filter": "0",
+            "nullable": "1",
             "name": "date_created",
             "html_type": "text",
             "mysql_type": "datetime",
@@ -441,22 +399,18 @@
             "readonly": "",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
             "dropdown_filter": "0",
-            "nullable": "0",
+            "nullable": "1",
             "name": "modified_by",
             "html_type": "autocomplete",
             "mysql_type": "int",
@@ -469,8 +423,7 @@
             "readonly": "0",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
+                "general": [],
                 "source": {
                     "data_source": "db_table",
                     "join_field": "id",
@@ -482,15 +435,13 @@
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         },
         {
             "dropdown_filter": "0",
-            "nullable": "0",
+            "nullable": "1",
             "name": "date_modified",
             "html_type": "text",
             "mysql_type": "datetime",
@@ -503,17 +454,13 @@
             "readonly": "",
             "format_value": "",
             "parameters": {
-                "general": [
-                ],
-                "source": [
-                ],
+                "general": [],
+                "source": [],
                 "save": {
                     "index": ""
                 },
-                "media": [
-                ],
-                "payment": [
-                ]
+                "media": [],
+                "payment": []
             }
         }
     ],
@@ -523,7 +470,7 @@
     "foreignkey": "",
     "renamedfields": "",
     "main_fields": [
-        "user_id"
+        "title"
     ],
     "main_view": "table",
     "has_view": "1",
@@ -541,32 +488,26 @@
         },
         "select": [
             "tt.id",
-            "tt.user_id",
-            "uu.name AS user_id_name",
             "tt.title",
             "tt.testimony",
             "tt.image",
             "mm.title AS image_title",
             "mm.file AS image_file",
-            "tt.user_title",
             "tt.name",
             "tt.company",
+            "tt.user_title",
+            "tt.user_id",
+            "uu.name AS user_id_name",
             "tt.published",
             "tt.featured",
             "tt.created_by",
-            "uu_9392.name AS created_by_name",
+            "uu_3070.name AS created_by_name",
             "tt.date_created",
             "tt.modified_by",
-            "uu_6062.name AS modified_by_name",
+            "uu_5424.name AS modified_by_name",
             "tt.date_modified"
         ],
         "leftjoin": [
-            {
-                "table": "Users\\Users\\Code\\Tables\\Users",
-                "alias": "uu",
-                "name": "#__users_users",
-                "on": "tt.user_id = uu.id"
-            },
             {
                 "table": "Media\\Media\\Code\\Tables\\Media",
                 "alias": "mm",
@@ -575,15 +516,21 @@
             },
             {
                 "table": "Users\\Users\\Code\\Tables\\Users",
-                "alias": "uu_9392",
+                "alias": "uu",
                 "name": "#__users_users",
-                "on": "tt.created_by = uu_9392.id"
+                "on": "tt.user_id = uu.id"
             },
             {
                 "table": "Users\\Users\\Code\\Tables\\Users",
-                "alias": "uu_6062",
+                "alias": "uu_3070",
                 "name": "#__users_users",
-                "on": "tt.modified_by = uu_6062.id"
+                "on": "tt.created_by = uu_3070.id"
+            },
+            {
+                "table": "Users\\Users\\Code\\Tables\\Users",
+                "alias": "uu_5424",
+                "name": "#__users_users",
+                "on": "tt.modified_by = uu_5424.id"
             }
         ]
     }

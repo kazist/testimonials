@@ -11,8 +11,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
  */
-class Testimonials extends \Kazist\Table\BaseTable {
-
+class Testimonials extends \Kazist\Table\BaseTable
+{
     /**
      * @var integer
      *
@@ -21,13 +21,6 @@ class Testimonials extends \Kazist\Table\BaseTable {
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     protected $id;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="user_id", type="integer", length=11, nullable=false)
-     */
-    protected $user_id;
 
     /**
      * @var string
@@ -53,13 +46,6 @@ class Testimonials extends \Kazist\Table\BaseTable {
     /**
      * @var string
      *
-     * @ORM\Column(name="user_title", type="string", length=255, nullable=true)
-     */
-    protected $user_title;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="name", type="string", length=255, nullable=true)
      */
     protected $name;
@@ -70,6 +56,20 @@ class Testimonials extends \Kazist\Table\BaseTable {
      * @ORM\Column(name="company", type="string", length=255, nullable=true)
      */
     protected $company;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="user_title", type="string", length=255, nullable=true)
+     */
+    protected $user_title;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="user_id", type="integer", length=11, nullable=true)
+     */
+    protected $user_id;
 
     /**
      * @var integer
@@ -88,68 +88,51 @@ class Testimonials extends \Kazist\Table\BaseTable {
     /**
      * @var integer
      *
-     * @ORM\Column(name="created_by", type="integer", length=11, nullable=false)
+     * @ORM\Column(name="created_by", type="integer", length=11, nullable=true)
      */
     protected $created_by;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_created", type="datetime", nullable=false)
+     * @ORM\Column(name="date_created", type="datetime", nullable=true)
      */
     protected $date_created;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="modified_by", type="integer", length=11, nullable=false)
+     * @ORM\Column(name="modified_by", type="integer", length=11, nullable=true)
      */
     protected $modified_by;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_modified", type="datetime", nullable=false)
+     * @ORM\Column(name="date_modified", type="datetime", nullable=true)
      */
     protected $date_modified;
+
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
-    public function getId() {
+    public function getId()
+    {
         return $this->id;
-    }
-
-    /**
-     * Set user_id
-     *
-     * @param integer $userId
-     * @return Testimonials
-     */
-    public function setUserId($userId) {
-        $this->user_id = $userId;
-
-        return $this;
-    }
-
-    /**
-     * Get user_id
-     *
-     * @return integer 
-     */
-    public function getUserId() {
-        return $this->user_id;
     }
 
     /**
      * Set title
      *
      * @param string $title
+     *
      * @return Testimonials
      */
-    public function setTitle($title) {
+    public function setTitle($title)
+    {
         $this->title = $title;
 
         return $this;
@@ -158,9 +141,10 @@ class Testimonials extends \Kazist\Table\BaseTable {
     /**
      * Get title
      *
-     * @return string 
+     * @return string
      */
-    public function getTitle() {
+    public function getTitle()
+    {
         return $this->title;
     }
 
@@ -168,9 +152,11 @@ class Testimonials extends \Kazist\Table\BaseTable {
      * Set testimony
      *
      * @param string $testimony
+     *
      * @return Testimonials
      */
-    public function setTestimony($testimony) {
+    public function setTestimony($testimony)
+    {
         $this->testimony = $testimony;
 
         return $this;
@@ -179,9 +165,10 @@ class Testimonials extends \Kazist\Table\BaseTable {
     /**
      * Get testimony
      *
-     * @return string 
+     * @return string
      */
-    public function getTestimony() {
+    public function getTestimony()
+    {
         return $this->testimony;
     }
 
@@ -189,9 +176,11 @@ class Testimonials extends \Kazist\Table\BaseTable {
      * Set image
      *
      * @param integer $image
+     *
      * @return Testimonials
      */
-    public function setImage($image) {
+    public function setImage($image)
+    {
         $this->image = $image;
 
         return $this;
@@ -200,40 +189,22 @@ class Testimonials extends \Kazist\Table\BaseTable {
     /**
      * Get image
      *
-     * @return integer 
+     * @return integer
      */
-    public function getImage() {
+    public function getImage()
+    {
         return $this->image;
-    }
-
-    /**
-     * Set user_title
-     *
-     * @param string $userTitle
-     * @return Testimonials
-     */
-    public function setUserTitle($userTitle) {
-        $this->user_title = $userTitle;
-
-        return $this;
-    }
-
-    /**
-     * Get user_title
-     *
-     * @return string 
-     */
-    public function getUserTitle() {
-        return $this->user_title;
     }
 
     /**
      * Set name
      *
      * @param string $name
+     *
      * @return Testimonials
      */
-    public function setName($name) {
+    public function setName($name)
+    {
         $this->name = $name;
 
         return $this;
@@ -242,9 +213,10 @@ class Testimonials extends \Kazist\Table\BaseTable {
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
-    public function getName() {
+    public function getName()
+    {
         return $this->name;
     }
 
@@ -252,9 +224,11 @@ class Testimonials extends \Kazist\Table\BaseTable {
      * Set company
      *
      * @param string $company
+     *
      * @return Testimonials
      */
-    public function setCompany($company) {
+    public function setCompany($company)
+    {
         $this->company = $company;
 
         return $this;
@@ -263,19 +237,70 @@ class Testimonials extends \Kazist\Table\BaseTable {
     /**
      * Get company
      *
-     * @return string 
+     * @return string
      */
-    public function getCompany() {
+    public function getCompany()
+    {
         return $this->company;
+    }
+
+    /**
+     * Set userTitle
+     *
+     * @param string $userTitle
+     *
+     * @return Testimonials
+     */
+    public function setUserTitle($userTitle)
+    {
+        $this->user_title = $userTitle;
+
+        return $this;
+    }
+
+    /**
+     * Get userTitle
+     *
+     * @return string
+     */
+    public function getUserTitle()
+    {
+        return $this->user_title;
+    }
+
+    /**
+     * Set userId
+     *
+     * @param integer $userId
+     *
+     * @return Testimonials
+     */
+    public function setUserId($userId)
+    {
+        $this->user_id = $userId;
+
+        return $this;
+    }
+
+    /**
+     * Get userId
+     *
+     * @return integer
+     */
+    public function getUserId()
+    {
+        return $this->user_id;
     }
 
     /**
      * Set published
      *
      * @param integer $published
+     *
      * @return Testimonials
      */
-    public function setPublished($published) {
+    public function setPublished($published)
+    {
         $this->published = $published;
 
         return $this;
@@ -284,9 +309,10 @@ class Testimonials extends \Kazist\Table\BaseTable {
     /**
      * Get published
      *
-     * @return integer 
+     * @return integer
      */
-    public function getPublished() {
+    public function getPublished()
+    {
         return $this->published;
     }
 
@@ -294,9 +320,11 @@ class Testimonials extends \Kazist\Table\BaseTable {
      * Set featured
      *
      * @param integer $featured
+     *
      * @return Testimonials
      */
-    public function setFeatured($featured) {
+    public function setFeatured($featured)
+    {
         $this->featured = $featured;
 
         return $this;
@@ -305,46 +333,58 @@ class Testimonials extends \Kazist\Table\BaseTable {
     /**
      * Get featured
      *
-     * @return integer 
+     * @return integer
      */
-    public function getFeatured() {
+    public function getFeatured()
+    {
         return $this->featured;
     }
 
     /**
-     * Get created_by
+     * Get createdBy
      *
-     * @return integer 
+     * @return integer
      */
-    public function getCreatedBy() {
+    public function getCreatedBy()
+    {
         return $this->created_by;
     }
 
     /**
-     * Get date_created
+     * Get dateCreated
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
-    public function getDateCreated() {
+    public function getDateCreated()
+    {
         return $this->date_created;
     }
 
     /**
-     * Get modified_by
+     * Get modifiedBy
      *
-     * @return integer 
+     * @return integer
      */
-    public function getModifiedBy() {
+    public function getModifiedBy()
+    {
         return $this->modified_by;
     }
 
     /**
-     * Get date_modified
+     * Get dateModified
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
-    public function getDateModified() {
+    public function getDateModified()
+    {
         return $this->date_modified;
     }
-
+    /**
+     * @ORM\PreUpdate
+     */
+    public function onPreUpdate()
+    {
+        // Add your code here
+    }
 }
+
