@@ -1,29 +1,43 @@
 {# empty Twig template #}
 {% import "form.macro.twig" as forms %}
 
+{{ set_assets('applications/Testimonials/assets/css/testimonial.css') }}
 
-<h1>{{ item.title }}</h1>
-
-<div class="business-posted-date">
-    <i class="fa fa-clock-o"></i> Posted:  {{ item.date_created|date('d M Y H:i') }} &nbsp;&nbsp;
-</div>
+<h1 class="component-header">{{ item.title }}</h1>
 
 <div>
 
-    <div class="form-group">
-        <label>Testimony</label><br>
-        {{ item.testimony|raw }}
+    <div class="text-center">
+        <img src="{{ resized_image(item.image_file) }}" class="" alt="{{ item.title }}" title="{{ item.title }}" width="90px">
     </div>
 
+    <div class="testimonial">
+
+        <div class="testimonial-body">
+            <div>
+                <i class="fa fa-quote-left fa-2x"></i> 
+                {{ item.testimony|raw }}  
+                <i class="fa fa-quote-right fa-2x"></i>
+                <br>
+            </div>
+
+            <br>
+
+            <div>
+                <i class="fa fa-user"></i> <i>{{ item.user_title|capitalize }}:</i> {{ item.name }} &nbsp;&nbsp;<br>
+                {% if item.company != '' %}
+                    <i class="fa fa-briefcase"></i> {{ item.company }} <br>
+                {% endif %}
+                <i class="fa fa-clock-o"></i> {{ item.date_created|date('d M Y') }} <br>
+            </div>
+        </div>
+
+    </div>
 </div>
 
-<div> 
-    <div class="clearfix"></div>
-    <div class="well well-sm">Other Testimonies</div>
-    <hr>
-    <div class="testimonial-testimonies-listing">
-        {% include "testimonial.list.twig" ignore missing with {'action': 'latest'}  %}
-    </div>
-    <div class="clearfix"></div>
-    <br>
+<br>
+<div class="text-center"> 
+    <a class="btn btn-primary" href="{{ generate_url('testimonials.testimonials') }}">Other Testimonies</a>
 </div>
+<br>
+<br>

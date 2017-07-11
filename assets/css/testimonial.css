@@ -39,16 +39,21 @@ and open the template in the editor.
     margin-top: 0;
     width: 90px;
     height: 90px;
+    border-radius: 50%;
 }
 
 .testimonial-list .testimonial{
-    border: 1px solid #eee;
     margin-bottom: 15px;
     margin-left: 95px;
     margin-right: 0px;
     position: relative;
-    background: #fff;
     position: relative;
+    padding: 10px;
+}
+
+.testimonial-wrapper{
+    background: #F9F9F9;
+    border-radius: 5px;
 }
 
 .testimonial-list li{
@@ -59,21 +64,29 @@ and open the template in the editor.
     padding:10px;
 }
 
-.testimonial-list .header {
-    font-size: 16px;
+.testimonial-list .testimonial-title {
+    font-size: 18px;
     padding:5px;
-    border-bottom: 1px solid #eee;
 }
+
+.testimonial-list .testimonial-image img {
+    background: white;
+    padding:1px;
+    margin:5px;
+}
+
+.testimonial-body p{
+    padding-left:20px;
+}
+
 .testimonial-list .meta {
     font-size: 13px;
     color: #aaaaaa;
-    border-bottom: 1px solid #eee;
 }
 
 .testimonial-list .meta-bottom {
     font-size: 13px;
     color: #aaaaaa;
-    border-top: 1px solid #eee;
 }
 
 .testimonial-list ul.comments ul{

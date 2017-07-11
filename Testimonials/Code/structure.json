@@ -7,7 +7,7 @@
                         "columns": [
                             {
                                 "name": "",
-                                "class_name": "col-sm-6",
+                                "class_name": "col-sm-8",
                                 "items": [
                                     {
                                         "group": {
@@ -18,12 +18,7 @@
                                             "hide_on_new": null,
                                             "fields": [
                                                 "title",
-                                                "user_id",
-                                                "testimony",
-                                                "image",
-                                                "name",
-                                                "user_title",
-                                                "company"
+                                                "testimony"
                                             ]
                                         }
                                     }
@@ -31,7 +26,7 @@
                             },
                             {
                                 "name": "",
-                                "class_name": "col-sm-6",
+                                "class_name": "col-sm-4",
                                 "items": [
                                     {
                                         "group": {
@@ -48,10 +43,37 @@
                                     },
                                     {
                                         "group": {
+                                            "name": "User Details",
+                                            "unique_name": "user_details",
+                                            "has_title": 1,
+                                            "user_right": 0,
+                                            "hide_on_new": 0,
+                                            "fields": [
+                                                "name",
+                                                "user_title",
+                                                "company",
+                                                "user_id"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "group": {
+                                            "name": "Image",
+                                            "unique_name": "image",
+                                            "has_title": 1,
+                                            "user_right": 0,
+                                            "hide_on_new": 0,
+                                            "fields": [
+                                                "image"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "group": {
                                             "name": "Modification Detail",
                                             "unique_name": "modification_detail",
                                             "has_title": 1,
-                                            "user_right": 1,
+                                            "user_right": 0,
                                             "hide_on_new": 1,
                                             "fields": [
                                                 "date_modified",
@@ -75,27 +97,26 @@
             "fields": [
                 "title",
                 "image",
-                "user_title",
                 "name",
                 "company",
+                "user_title",
                 "published",
                 "featured"
             ],
             "has_label": [
-                "user_id",
                 "title",
+                "image",
+                "name",
+                "company",
+                "user_title",
                 "published",
-                "featured",
-                "created_by",
-                "date_created"
+                "featured"
             ]
         }
     },
     "rights": {
         "tab": [],
-        "group": [
-            "modification_detail"
-        ],
+        "group": [],
         "field": []
     },
     "customhtmls": [],
@@ -501,10 +522,10 @@
             "tt.published",
             "tt.featured",
             "tt.created_by",
-            "uu_3070.name AS created_by_name",
+            "uu_2524.name AS created_by_name",
             "tt.date_created",
             "tt.modified_by",
-            "uu_5424.name AS modified_by_name",
+            "uu_7408.name AS modified_by_name",
             "tt.date_modified"
         ],
         "leftjoin": [
@@ -522,15 +543,15 @@
             },
             {
                 "table": "Users\\Users\\Code\\Tables\\Users",
-                "alias": "uu_3070",
+                "alias": "uu_2524",
                 "name": "#__users_users",
-                "on": "tt.created_by = uu_3070.id"
+                "on": "tt.created_by = uu_2524.id"
             },
             {
                 "table": "Users\\Users\\Code\\Tables\\Users",
-                "alias": "uu_5424",
+                "alias": "uu_7408",
                 "name": "#__users_users",
-                "on": "tt.modified_by = uu_5424.id"
+                "on": "tt.modified_by = uu_7408.id"
             }
         ]
     }
