@@ -4,6 +4,7 @@
     "alias": "testimonials",
     "icon": "fa fa-comments",
     "home_link": "testimonials\/testimonials",
+    "path": "applications/Testimonials",
     "is_core": "1",
     "menulist": [{
             "title": "Testimonials",
