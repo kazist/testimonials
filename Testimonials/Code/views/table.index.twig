@@ -37,7 +37,7 @@
                                 {% if item.company != '' %}
                                     <i class="fa fa-briefcase"></i> {{ item.company }} <br>
                                 {% endif %}
-                                <i class="fa fa-clock-o"></i> {{ item.date_created|date('d M Y') }} <br>
+                                <i class="fa fa-clock-o"></i> {{ item.date_created|date('d M Y',  document.timezone) }} <br>
                             </div>
                         </div>
                     </div>

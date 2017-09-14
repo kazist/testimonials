@@ -34,7 +34,7 @@
                                 {% endif %}
                             </div>
                             <div class="meta-bottom">
-                                <i class="fa fa-clock-o"></i> {{ item.date_created|date('d M Y H:i') }} 
+                                <i class="fa fa-clock-o"></i> {{ item.date_created|date('d M Y H:i',  document.timezone) }} 
                             </div>
                         </div>
                     </div>
