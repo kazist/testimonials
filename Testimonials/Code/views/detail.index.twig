@@ -3,12 +3,16 @@
 
 {{ set_assets('applications/Testimonials/assets/css/testimonial.css') }}
 
+{% set parameters = {'limit' : 3} %}
+{% set testimonials = callFunction('Testimonials.Testimonials.Code.Models.TestimonialsModel', 'getTestimonials', parameters)%}
+
+
 <h1 class="component-header">{{ item.title }}</h1>
 
 <div>
 
     <div class="text-center">
-        <img src="{{ resized_image(item.image_file) }}" class="" alt="{{ item.title }}" title="{{ item.title }}" width="90px">
+        <img src="{{ resized_image(item.image_file,500) }}" class="" alt="{{ item.title }}" title="{{ item.title }}">
     </div>
 
     <div class="testimonial">
@@ -34,6 +38,54 @@
 
     </div>
 </div>
+
+<h4 class="text-center">Testimonial</h4>
+<hr>
+
+<div class="testimonial-list">
+    <ul >
+
+        {% if testimonials|length > 0 %}
+            {% for testimonial in testimonials %}
+
+                <li class="clearfix testimonial-wrapper">
+                    <a class="testimonial-image" href="{{ generate_url('testimonials.testimonials.detail', {'id':testimonial.id})}}">
+                        <img src="{{ resized_image(testimonial.image_file, 90, 90) }}" class="avatar img-circle" alt="{{ testimonial.title }}" title="{{ testimonial.title }}" width="90px">
+                    </a>
+                    <div class="testimonial">
+                        <div class="testimonial-title">
+                            <a href="{{ generate_url('testimonials.testimonials.detail', {'id':testimonial.id})}}">
+                                {{ testimonial.title }} 
+                            </a>
+                        </div>
+                        <div class="testimonial-body">
+                            <div>
+                                <i class="fa fa-quote-left fa-2x"></i> 
+                                <p>
+                                    {{ testimonial.testimony|raw|striptags|truncate(400) }}  
+                                </p>
+                                <i class="fa fa-quote-right fa-2x"></i>
+                                <br>
+                            </div>
+
+                            <br>
+
+                            <div>
+                                <i class="fa fa-user"></i> <i>{{ testimonial.user_title|capitalize }}:</i> {{ testimonial.name }} &nbsp;&nbsp;<br>
+                                {% if testimonial.company != '' %}
+                                    <i class="fa fa-briefcase"></i> {{ testimonial.company }} <br>
+                                {% endif %}
+                                <i class="fa fa-clock-o"></i> {{ testimonial.date_created|date('d M Y',  document.timezone) }} <br>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+            {% endfor %}
+        {% endif %}
+
+    </ul>
+</div>        
 
 <br>
 <div class="text-center"> 
